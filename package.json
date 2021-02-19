@@ -1,0 +1,10 @@
+{
+  "name": "balancer-registry",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "dependencies": {
+    "near-web3-provider": "^1.1.0"
+  }
+}
