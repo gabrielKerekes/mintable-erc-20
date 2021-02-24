@@ -1,4 +1,4 @@
-const { NearProvider } = require('near-web3-provider');
+const { NearProvider, nearAPI } = require('near-web3-provider');
 
 module.exports = {
   networks: {
@@ -9,6 +9,20 @@ module.exports = {
         new NearProvider({
           networkId: 'local',
           masterAccountId: 'test.near',
+          evmAccountId: 'evm.test.near',
+          // If you get account/key errors you might also need to set the key manually
+          //
+          // keyStore: (() => {
+          //   const keyStore = new nearAPI.keyStores.InMemoryKeyStore();
+          //   keyStore.setKey(
+          //     'local',
+          //     'test.near',
+          //     nearAPI.KeyPair.fromString(
+          //       '[secret key from test.near.json]',
+          //     ),
+          //   );
+          //   return keyStore;
+          // })(),
         }),
     },
     near_mainnet: {

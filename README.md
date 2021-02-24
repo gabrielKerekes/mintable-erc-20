@@ -14,6 +14,8 @@ You also need to be logged in to NEAR betanet in you environment.
 
 ## Deploy
 
+### Betanet
+
 Run truffle migrations:
 
 ```
@@ -22,6 +24,20 @@ env NEAR_MASTER_ACCOUNT=[NEAR_ACCOUNT_ID].betanet truffle migrate --network near
 
 Store the contract address somewhere.
 
+### Localnet
+
+Make sure `masterAccountId` and `evmAccountId` are set correctly in the `NearProvider` for the `near_local` configuration.
+
+Run truffle migrations:
+
+```
+truffle migrate --network near_local
+```
+
+Store the contract address somewhere.
+
+If you get an account/key error uncomment the `keyStore` section in `NearProvider` for `near_local` and paster your master account secret key.
+
 ## Minting
 
 Run truffle console:
@@ -29,6 +45,8 @@ Run truffle console:
 ```
 env NEAR_MASTER_ACCOUNT=[NEAR_ACCOUNT_ID].betanet truffle console --network near_betanet
 ```
+
+_NOTE: for localnet `NEAR_MASTER_ACCOUNT` isn't used and of course, `--network` should be set to `near_local`._
 
 And in the console execute:
 
